@@ -17,6 +17,9 @@
       },
       "api": {
         "mysecrettease": {}
+      },
+      "storage": {
+        "s3ded7f780": {}
       }
     }
   }
