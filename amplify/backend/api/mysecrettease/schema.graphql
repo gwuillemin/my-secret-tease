@@ -1,6 +1,38 @@
-type Note @model @auth(rules: [ { allow: public } ] ){
+type Note @model @auth(rules: [{ allow: public }]) {
   id: ID!
   name: String!
   description: String
   image: String
+}
+
+type Message
+  @model
+  @auth(
+    rules: [
+      # Allow signed in users to perform all actions
+      { allow: public }
+    ]
+  ) {
+  id: ID!
+  channelID: ID!
+    @index(
+      name: "byChannelID"
+      sortKeyFields: [ "createdAt"]
+      queryField: "messagesByChannelID"
+    )
+  author: String!
+  body: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+
+type CurrentlyOnlineUser 
+@model
+@auth({ allow: private ,operations: [read]},
+{ allow: owner,  operations: [create, read, update, delete]}) {
+Username : String!,
+
+
+
 }
