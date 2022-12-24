@@ -2,5 +2,11 @@
   "AppSyncApiName": "mysecrettease",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2022-12-07T14:47:05.732Z"
+  "AuthModeLastUpdated": "2022-12-07T14:47:05.732Z",
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authmysecretteaseb903735c",
+      "Outputs.UserPoolId"
+    ]
+  }
 }
