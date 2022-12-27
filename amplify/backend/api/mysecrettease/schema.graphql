@@ -27,12 +27,4 @@ type Message
 }
 
 
-type CurrentlyOnlineUser 
-@model
-@auth({ allow: private ,operations: [read]},
-{ allow: owner,  operations: [create, read, update, delete]}) {
-Username : String!,
 
-
-
-}
